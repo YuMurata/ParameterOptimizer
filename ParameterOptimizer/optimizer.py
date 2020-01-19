@@ -6,7 +6,7 @@ from .predict_model import PredictModel
 import random
 from statistics import mean, stdev
 from .data_generator import DataGenerator
-from .bit_decorder import BitDecoder
+from .bit_decoder import BitDecoder
 
 
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
@@ -30,8 +30,8 @@ class Optimizer:
 
         mu = 1
         variation_width = 0.5
-        sigma = variation_width/3
-        return predict_evaluate*random.gauss(mu, sigma),
+        sigma = variation_width / 3
+        return predict_evaluate * random.gauss(mu, sigma),
 
     def _init_deap(self):
         toolbox = base.Toolbox()

@@ -1,8 +1,8 @@
 from abc import ABCMeta, abstractmethod
-from PIL.Image import Image
+import typing
 
 
 class PredictModel(metaclass=ABCMeta):
     @abstractmethod
-    def predict(self, image: Image) -> float:
+    def predict(self, data: typing.Any) -> float:
         pass

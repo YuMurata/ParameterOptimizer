@@ -5,7 +5,7 @@ from .predict_model import PredictModel
 
 import random
 from statistics import mean, stdev
-from .image_generator import ImageGenerator
+from .data_generator import DataGenerator
 from .bit_decorder import BitDecoder
 
 
@@ -15,16 +15,16 @@ creator.create("Individual", list, fitness=creator.FitnessMax)
 
 class Optimizer:
     def __init__(self, model: PredictModel,
-                 image_generator: ImageGenerator,
+                 data_generator: DataGenerator,
                  bit_decoder: BitDecoder):
-        self.image_generator = image_generator
+        self.data_generator = data_generator
         self.bit_decoder = bit_decoder
         self.model = model
         self.toolbox = self._init_deap()
 
     def _evaluate(self, individual):
         param = self.bit_decoder.decode(individual)
-        image = self.image_generator.generate(param)
+        image = self.data_generator.generate(param)
 
         predict_evaluate = self.model.predict(image)
 

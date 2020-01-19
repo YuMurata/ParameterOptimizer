@@ -1,6 +1,7 @@
-from abc import ABCMeta, abstractclassmethod
+from abc import ABCMeta, abstractmethod
 import typing
 
+Param = typing.NewType('Param', typing.Any)
 
 
 class BitDecoder(metaclass=ABCMeta):

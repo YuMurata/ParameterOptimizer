@@ -1,3 +1,4 @@
 from .optimizer import Optimizer
-from .image_generator import ImageGenerator
-from .bit_decoder import BitDecoder
+from .data_generator import DataGenerator, Data
+from .bit_decoder import BitDecoder, Param
+from .predict_model import PredictModel
